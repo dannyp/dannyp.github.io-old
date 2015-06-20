@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Danny Pallotta">
     <meta name="author" content="Danny Pallotta">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
 
     <title>Danny Pallotta</title>
 
@@ -25,7 +25,6 @@
     <!--[if lt IE 8]>
       <link href="css/font-awesome-ie7.css" rel="stylesheet">
     <![endif]-->
-    
   </head>
 
   <body data-spy="scroll" data-target="#main-nav" data-offset="70">
@@ -39,7 +38,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Danny Pallotta</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -54,7 +52,7 @@
     </header>
     
   	<div id="skrollr-body">
-			<div id="top" class="header" data-start="height:800px;" data-200="height:0;">
+			<div id="top" class="header pad-viewport-height">
 				<div class="vert-text">
 					<h1 class="white-shadow">Danny Pallotta</h1>
 					<h3 class="white-shadow">Software Developer</h3>
@@ -62,7 +60,7 @@
 				</div>
 			</div>
      
-			<div id="about-me">
+			<div id="about-me" class="">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12  text-center">
@@ -86,26 +84,43 @@
 							
 							<div id="work-dws">
 								<h3>
-									<span class="hand-cursor text-primary show-hover" data-toggle="collapse" data-target="#work-dws-info">
-										<small>2011 - 2014</small> DWS Advanced Business Solutions 
+									<span class="text-primary">
+										<small>2011 - 2015</small> DWS Advanced Business Solutions 
 										<i class="icon-chevron-down show-more"></i>
 									</span>
 								</h3>
-								<div class="collapse" id="work-dws-info">
+								<div class="" id="work-dws-info">
 									<p class="lead">Software Consultant</p>
-									<div class="row">
-										<div class="col-md-4 text-center">
-											<canvas id="dws-chart-1" height="100" width="100" data-chart="doughnut" data-percent="85"></canvas>
-											 <p>.NET Development</p>
-										</div>
-										<div class="col-md-4 text-center">
-											<canvas id="dws-chart-2" height="100" width="100" data-chart="doughnut" data-percent="60"></canvas>
-											<p>SQL Server</p>
-										</div>
-										<div class="col-md-4 text-center">
-											<canvas id="dws-chart-2" height="100" width="100" data-chart="doughnut" data-percent="75"></canvas>
-											<p>Frontend (Web) Development</p>
-										</div>
+									<p>
+										I started with DWS in 2011 as a Graduate have since been engaged to provide software development consulting
+										and expertise for a diverse assortment of clients. This has given me experience in a range of technologies, 
+										industries and organisational environments.  
+									</p>
+									<p>
+										<h4>Notable clients/projects</h4>
+										<ul class="list-unstyled">
+											<li>
+												<h5>ASC / AWD Alliance</h5>
+												<p>
+													<strong>Skills:</strong> 
+														<span class="label label-success">ASP.NET MVC 4</span> 
+														<span class="label label-success">SQL Server</span> 
+														<span class="label label-success">SSRS Reporting</span> 
+														<span class="label label-success">HTML 5 &amp; Javascript</span> 
+												</p>
+												<p>
+													<strong>Technologies:</strong> 
+														<span class="label label-primary">ASP.NET MVC 4</span> 
+														<span class="label label-primary">SQL Server</span> 
+														<span class="label label-primary">SSRS Reporting</span> 
+														<span class="label label-primary">HTML 5 &amp; Javascript</span> 
+														
+												</p>
+											</li>
+											<li>SA Power Networks</li>
+											<li>Incitec Pivot Limited</li>
+										</ul>
+									</p>
 								</div>
 							</div>
 										
@@ -235,26 +250,32 @@
     <script src="js/site.js"></script>
     <script type="text/javascript">
       $(function(){
-				$('#work-dws-info').on('shown.bs.collapse', function() { 
-					$(this).find('canvas[data-chart=doughnut]').each(function() {
-						var ctx = $(this).get(0).getContext("2d");
-						var percentage = parseInt($(this).attr('data-percent'));
-						var chart = new Chart(ctx).Doughnut([
-								{ value: percentage, color: '#F7464A'},
-								{ value: 100-percentage, color:'#FFF'}
-							], 
-							{
-								animationEasing : 'easeOutQuart'
-							});
-						console.log(chart)
-					});
-				}).on('hidden.bs.collapse', function() {  
-					$(this).find('canvas[data-chart=doughnut]').each(function() {
-							var ctx = $(this).get(0).getContext("2d");
-							
-							ctx.clearRect(0,0,100, 100	);	
-						});
+		var getHeaderPadding = function(){ return (window.innerHeight / 2) - parseInt($(this).css('line-height')) * 3 ; };  
+		var isVisible = function isScrolledIntoView(el) {
+		    var elemTop = el.getBoundingClientRect().top;
+		    var elemBottom = el.getBoundingClientRect().bottom;
+		
+		    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+		    return isVisible;
+		};
+		
+		$('.pad-viewport-height')
+			.css('padding-bottom', getHeaderPadding)
+			.css('padding-top', getHeaderPadding);
+			
+
+		$('#work-dws-info').find('canvas[data-chart=doughnut]').each(function() {
+			var ctx = $(this).get(0).getContext("2d");
+			var percentage = parseInt($(this).attr('data-percent'));
+			var chart = new Chart(ctx).Doughnut([
+					{ value: percentage, color: '#F7464A'},
+					{ value: 100-percentage, color:'#FFF'}
+				], 
+				{
+					animationEasing : 'easeOutQuart'
 				});
+			console.log(chart)
+		});
       });
     </script>
     
