@@ -10,8 +10,8 @@
     <title>Danny Pallotta</title>
 
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/css/font-awesome.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/css/site.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/site.css" rel="stylesheet">
 		
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
@@ -19,11 +19,11 @@
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="{{ site.baseurl }}/js/html5shiv.js"></script>
-      <script src="{{ site.baseurl }}/js/respond.min.js"></script>  
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>  
     <![endif]-->
     <!--[if lt IE 8]>
-      <link href="{{ site.baseurl }}/css/font-awesome-ie7.css" rel="stylesheet">
+      <link href="css/font-awesome-ie7.css" rel="stylesheet">
     <![endif]-->
     
   </head>
@@ -229,15 +229,13 @@
     
 		</div>
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ site.baseurl }}/js/jquery.js"></script>
-    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
-    <script src="{{ site.baseurl }}/js/Chart.js"></script>
-    <script src="{{ site.baseurl }}/js/site.js"></script>
-    <script src="{{ site.baseurl }}/js/skrollr.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Chart.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/skrollr.js"></script>
     <script type="text/javascript">
       $(function(){
-       	var s = skrollr.init();
-      
 				$('#work-dws-info').on('shown.bs.collapse', function() { 
 					$(this).find('canvas[data-chart=doughnut]').each(function() {
 						var ctx = $(this).get(0).getContext("2d");
