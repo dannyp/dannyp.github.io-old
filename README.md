@@ -1,7 +1,4 @@
-dannyp.github.io
-================
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Todo: make it a submodule.
-Todo: point domains to it. Decomission grant's server.
-
-This is the built version of the dannyp.net site. 
+Below you will find some information on how to perform common tasks.<br>
+You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
