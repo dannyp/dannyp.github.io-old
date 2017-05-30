@@ -1,19 +1,22 @@
 import React from 'react';
 import { Card, CardText, CardTitle } from 'material-ui/Card';
-import { blue500 } from 'material-ui/styles/colors';
+import { CustomIconAvatar } from '../shared';
 import { ActionHome } from 'material-ui/svg-icons';
-import Avatar from 'material-ui/Avatar';
 
 export default (props) => {
     return (
         <Card>
-            
-            <CardTitle title='Danny Pallotta'></CardTitle>
+            <CustomIconAvatar icon={ <ActionHome />} />
+            <CardTitle title="Hi, I'm Danny Pallotta"></CardTitle>
             <CardText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit  in voluptate velit esse cillum dolore eu 
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-            </CardText>
+                <p>
+                    I am a Software Consultant with 6 years of experience as a consultant in the Information Techonolgy industry. I enjoy problem solving using my strong technical skillset with a personable and flexible nature 
+                    and a passion for producing elegant and functional solutions to deliver the best possible outcome.
+                </p>
+                <p>
+                    My key areas of expertise lie in implementing web, mobile and desktop applications, as well as analytics and reporting solutions to clients in a number of different industries and commercial settings. 
+                </p>
+                </CardText>
         </Card>
     );
 }

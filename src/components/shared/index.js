@@ -1,1 +1,1 @@
-export CustomIconAvatar from './CustomIconAvatar.js';
+export { default as CustomIconAvatar } from "./CustomIconAvatar.js"

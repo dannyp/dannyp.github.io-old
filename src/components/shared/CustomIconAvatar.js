@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from 'material-ui/Avatar';
-import { blue500 } from 'material-ui/styles/colors';
+import muiThemeable from 'material-ui/styles/muiThemeable';
 
-export default (props) => (
-    <Avatar backgroundColor={ blue500 } style={{ float:'right', margin: '10px' }} {...props} />
-)
+export default muiThemeable()((props) => (
+    <Avatar backgroundColor={ props.muiTheme.palette.primary1Color } style={{ float:'right', margin: '8px' }} {...props} />
+));
